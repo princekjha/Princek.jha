@@ -1,24 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prince Jha | Portfolio</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Floating top bar */
+    .greeting-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      text-align: center;
+      padding: 12px 0;
+      font-size: 18px;
+      font-weight: 500;
+      z-index: 9999;
+      backdrop-filter: blur(4px);
+    }
+
+    /* iframe covers full page but leaves space under bar */
+    iframe {
+      position: absolute;
+      top: 48px; /* height of your greeting bar */
+      left: 0;
+      width: 100%;
+      height: calc(100% - 48px);
+      border: none;
+    }
+
+    /* optional animation */
+    @keyframes slideIn {
+      from { top: -60px; opacity: 0; }
+      to { top: 0; opacity: 1; }
+    }
+    .greeting-bar {
+      animation: slideIn 0.7s ease;
+    }
+  </style>
 </head>
 <body>
-    <iframe src="https://prince-kumar-jha-hsrjrz9.gamma.site/" title="Portfolio"></iframe>
+  <div class="greeting-bar">
+    👋 Hey there! Welcome to my portfolio site — I’m glad you stopped by!
+  </div>
+
+  <iframe src="https://prince-kumar-jha-hsrjrz9.gamma.site/" title="Portfolio"></iframe>
 </body>
 </html>
